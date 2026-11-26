@@ -1,0 +1,1 @@
+GitHub Pages の新規リポジトリに index.html、sw.js、manifest.webmanifest、icon-192.png、icon-512.png を同じ階層に配置。Settings > Pages > Deploy from a branch > main / (root)。公開URLをChromeで開き、オフライン起動準備済みを確認。ホーム画面にインストールし、CSVを端末から取り込む。実名簿CSVはGitHubにアップロードしない。Wi-Fiを切り、アプリを閉じて再起動し、番号・カナ検索を確認。日本語音声の準備ボタンは対応ブラウザのみ利用可能。実機で音声検索の成否を確認。
