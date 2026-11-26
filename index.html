@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>選手音声検索 v2.00</title>
+<title>選手音声検索 v2.01</title>
 <style>
 :root{font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:#172538;background:#edf2f7}*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer;border-radius:12px;border:0;padding:13px 16px;font-weight:750}button:disabled{opacity:.35;cursor:default}.primary{background:#1263be;color:white}.outline{background:white;border:2px solid #b9c9da;color:#193855}.danger{background:#ad2734;color:white}.muted{color:#5c6c7d}.wrap{max-width:1000px;padding:16px;margin:auto}.top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:14px}.top h1{font-size:clamp(21px,3.5vw,29px);margin:0}.chip{padding:5px 9px;border-radius:999px;background:#dcefe4;color:#165b36;font-size:13px;font-weight:700}.layout{display:grid;grid-template-columns:1fr;gap:16px}.panel{background:#fff;border-radius:19px;padding:18px;box-shadow:0 5px 18px #193e6310}.stack{display:grid;gap:11px}.mic{min-height:90px;font-size:25px;display:flex;justify-content:center;align-items:center;gap:12px;width:100%}.mic.listening{background:#b32c35;animation:pulse 1.1s infinite}@keyframes pulse{50%{filter:brightness(1.2)}}.searchRow{display:flex;gap:8px}.searchRow input{min-width:0;flex:1;border:2px solid #b4c7d9;border-radius:11px;padding:12px;font-size:19px}.tiny{font-size:13px}.status{min-height:24px;font-size:14px;color:#435773}.nav{display:flex;align-items:center;justify-content:space-between;gap:8px}.nav button{font-size:17px;min-width:85px}.counter{font-weight:850;font-size:18px}.result{border:2px solid #d6e2ee;border-radius:15px;padding:20px;min-height:360px}.bib{font-size:clamp(44px,9vw,70px);font-weight:900;letter-spacing:1px;text-align:center;line-height:1.2;color:#0e4985;font-variant-numeric:tabular-nums}.name{text-align:center;font-weight:850;font-size:clamp(27px,5vw,40px);margin:7px 0 2px}.kana{text-align:center;font-size:19px;color:#637487}.divider{height:1px;background:#dde5ec;margin:16px 0}.kv{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid #ebeff4}.kv span:first-child{color:#526375;white-space:nowrap}.kv strong{text-align:right;font-size:clamp(16px,2.7vw,23px)}.notice{padding:11px;border-radius:9px;background:#fff4d8;color:#76531b;font-size:14px}.dangerNotice{background:#fff0f0;color:#83202a}.setting{display:grid;gap:10px}.setting h2,.find h2{margin:0 0 10px;font-size:19px}.file{width:100%;font-size:15px}.footer{font-size:12px;color:#6b7d8c;margin:18px 0}.hidden{display:none!important}.tag{font-size:12px;font-weight:800;border-radius:6px;padding:4px 7px;background:#e6f2ff;color:#19548e}.empty{display:grid;place-items:center;min-height:280px;color:#77899b;text-align:center}body.modalOpen{overflow:hidden}.modalBackdrop{position:fixed;inset:0;background:#0c1b2dbb;display:grid;place-items:center;padding:18px;z-index:9}.modal{background:white;border-radius:17px;padding:22px;max-width:480px;width:100%}.modalActions{display:flex;justify-content:flex-end;gap:10px;margin-top:20px;flex-wrap:wrap}@media(min-width:780px){.layout{grid-template-columns:330px minmax(0,1fr)}.panel{padding:23px}.result{min-height:480px}.mic{font-size:23px}}@media(max-width:430px){.wrap{padding:10px}.panel{padding:14px}.result{padding:14px}.nav button{min-width:70px;padding:12px 9px}.kv{align-items:start}.kv span:first-child{white-space:normal}}
 
@@ -168,11 +168,11 @@
 .extraGrid .lowerValue{flex:1;min-width:0;text-align:right;white-space:nowrap;overflow:hidden;font-size:24px}
 @media(max-width:600px){.extraGrid{gap:4px}.resultPanel .extraGrid>.lowerCell{padding:5px 4px;gap:4px}.resultPanel .dynamicGrid>.detailCell{min-height:105px}}
 
-/* v2.00: align upper detail labels and values to a common top edge */
+/* v2.01: align upper detail labels and values to a common top edge */
 .resultPanel .dynamicGrid>.detailCell{justify-content:flex-start;align-content:start}
 .resultPanel .dynamicGrid>.detailCell>.detailLabel{line-height:1.3;flex-shrink:0}
 .resultPanel .dynamicGrid>.detailCell>.detailValue{align-self:center;width:100%}
-/* v2.00: keep headings aligned at top; center the three values in the remaining vertical space. */
+/* v2.01: keep headings aligned at top; center the three values in the remaining vertical space. */
 .resultPanel .dynamicGrid>.eventCell>.detailValue,
 .resultPanel .dynamicGrid>.blockCell>.detailValue,
 .resultPanel .dynamicGrid>.shirtCell>.detailValue{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:0}
@@ -182,7 +182,7 @@
 <link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#1263be"><link rel="apple-touch-icon" href="icon-192.png"></head>
 <body>
 <main class="wrap">
-<header class="top"><h1 id="appHeading">🎙 選手音声検索</h1><div class="topRight"><span class="versionLabel" aria-label="システムバージョン">Ver.2.00</span><span id="badge" class="chip">名簿未登録</span></div></header>
+<header class="top"><h1 id="appHeading">🎙 選手音声検索</h1><div class="topRight"><span class="versionLabel" aria-label="システムバージョン">Ver.2.01</span><span id="badge" class="chip">名簿未登録</span></div></header>
 <div style="margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center"><span id="offlineStatus" class="tiny muted" role="status">オフライン準備を確認中</span><button id="installApp" class="outline hidden" type="button">アプリをインストール</button><button id="prepareVoice" class="outline" type="button">日本語オフライン音声を準備</button><span id="localVoiceStatus" class="tiny muted" role="status"></span></div><div class="layout compactLayout">
 <section class="panel adminPanel" aria-label="名簿管理">
   <details id="eventDetails" class="managementDetails"><summary>⚙ 大会名設定 <span class="adminHint">タップして開く</span></summary><div class="setting managementBody"><label for="eventName">大会名</label><input id="eventName" type="text" maxlength="100" placeholder="例：丹沢湖マラソン" style="width:100%;padding:10px;font-size:18px;border:1px solid #abc0d5;border-radius:8px"><button id="saveEvent" class="primary" type="button">大会名を保存</button><div id="eventStatus" class="tiny muted" role="status"></div></div></details>
@@ -221,7 +221,7 @@
   <div id="result" class="result"><div class="empty">名簿を読み込んで氏名を検索してください。</div></div>
 </section>
 </div>
-<p class="footer">v2.00 名簿に基づく漢字・カナ照合対応・表示項目設定対応 ｜ 名簿検索は端末内で実行。音声認識は機種・ブラウザにより外部サービスで処理される場合があります。通信を伴わないことを保証するものではありません。</p>
+<p class="footer">v2.01 名簿に基づく漢字・カナ照合対応・表示項目設定対応 ｜ 名簿検索は端末内で実行。音声認識は機種・ブラウザにより外部サービスで処理される場合があります。通信を伴わないことを保証するものではありません。</p>
 </main>
 <div id="modalWrap" class="modalBackdrop hidden" role="presentation"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><h2 id="modalTitle">名簿を削除しますが、よろしいですか？</h2><p><strong>この操作でアプリ内の登録名簿・検索結果を削除します。</strong><br>削除後に利用するにはCSVの再読込が必要です。</p><p class="notice dangerNotice">元CSVは自動削除されません。端末の「ファイル」などから別途削除し、ゴミ箱やクラウドのコピーも確認してください。</p><div class="modalActions"><button id="cancel" class="outline" type="button">キャンセル（削除しない）</button><button id="confirm" class="danger" type="button">削除を実行する</button></div></div></div>
 <script>
@@ -230,7 +230,7 @@ const $=id=>document.getElementById(id);
 const eventNameKey='runner-lookup-universal-event-name-v1';
 let eventName='丹沢湖マラソン';
 try{const stored=localStorage.getItem(eventNameKey);if(stored!==null)eventName=stored;}catch(e){}
-function applyEventName(){ $('appHeading').textContent='🎙 '+(eventName?eventName+'　':'')+'選手音声検索'; document.title=(eventName?eventName+' ':'')+'選手音声検索 v2.00'; }
+function applyEventName(){ $('appHeading').textContent='🎙 '+(eventName?eventName+'　':'')+'選手音声検索'; document.title=(eventName?eventName+' ':'')+'選手音声検索 v2.01'; }
 $('eventName').value=eventName;applyEventName();
 $('saveEvent').onclick=()=>{eventName=$('eventName').value.trim();applyEventName();try{localStorage.setItem(eventNameKey,eventName);$('eventStatus').textContent='大会名を保存しました。';$('eventDetails').open=false;}catch(e){$('eventStatus').textContent='端末に保存できません。この画面内のみ反映します。';}};
 
@@ -326,10 +326,10 @@ function doSearch(raw){
 }
 function el(tag,cls,content){const node=document.createElement(tag);if(cls)node.className=cls;if(content!==undefined)node.textContent=content;return node}
 function eventLines(value){const t=String(value||'未登録');const i=t.indexOf('子');return i<0?[t]:[t.slice(0,i+1),t.slice(i+1)].filter(Boolean)}
-const baseFields=[['event','種目名'],['block','スタートブロック'],['shirt','Tシャツ'],['birth','生年月日'],['method','申込方法'],['extra:年齢','年齢'],['extra:予想タイム','予想タイム'],['extra:都市名','都市名']];
+const baseFields=[['event','種目名'],['block','スタートブロック'],['shirt','Tシャツ'],['birth','生年月日'],['method','申込方法'],['extra:年齢','年齢'],['extra:予想タイム','予想タイム'],['extra:都市名','都市名'],['extra:所属','所属']];
 let optionalFields=[...baseFields];
 const settingsKey='runner-lookup-universal-display-v1';
-let display={event:true,block:false,shirt:true,birth:true,method:true,'extra:予想タイム':false,'extra:都市名':false,'extra:年齢':false};
+let display={event:true,block:false,shirt:true,birth:true,method:true,'extra:予想タイム':false,'extra:都市名':false,'extra:年齢':false,'extra:所属':false};
 try{const saved=JSON.parse(localStorage.getItem(settingsKey)||'null');if(saved)for(const k of Object.keys(saved))if(typeof saved[k]==='boolean')display[k]=saved[k];}catch(e){}
 function saveDisplay(){try{localStorage.setItem(settingsKey,JSON.stringify(display));$('displayStatus').textContent='設定を端末に保存しました。';}catch(e){$('displayStatus').textContent='設定を保存できません。この画面内のみ反映します。';}render();}
 function refreshFields(){const extras=new Map();for(const p of people)for(const x of (p.extra||[]))if(!extras.has(x.key))extras.set(x.key,x.label);optionalFields=[...baseFields,...Array.from(extras,([k,label])=>['extra:'+k,label]).filter(([k])=>!baseFields.some(([b])=>b===k))];for(const [k] of optionalFields)if(!(k in display))display[k]=false;setupDisplay();}
@@ -351,7 +351,7 @@ function render(){
  const active=optionalFields.filter(([k])=>display[k]);
  const lower=el('div','extraGrid');
  const isLower=k=>k==='method'||k.startsWith('extra:');
- const lowerPriority=['method','extra:年齢','extra:予想タイム','extra:都市名'];
+ const lowerPriority=['method','extra:年齢','extra:予想タイム','extra:都市名','extra:所属'];
  const upperPriority=['event','block','shirt','birth'];
  const upperFields=upperPriority.flatMap(k=>active.filter(([key])=>key===k));
  const lowerFields=active.filter(([k])=>isLower(k)).sort((a,b)=>{
@@ -437,7 +437,7 @@ $('prev').onclick=()=>move(-1);$('next').onclick=()=>move(1);$('search').onclick
 window.addEventListener('keydown',e=>{if(document.activeElement?.tagName==='INPUT')return;if(e.key==='ArrowRight')move(1);if(e.key==='ArrowLeft')move(-1)});
 let touchStart=null;$('result').addEventListener('touchstart',e=>{touchStart={x:e.changedTouches[0].screenX,y:e.changedTouches[0].screenY}},{passive:true});$('result').addEventListener('touchend',e=>{if(!touchStart)return;const dx=e.changedTouches[0].screenX-touchStart.x,dy=e.changedTouches[0].screenY-touchStart.y;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5)move(dx<0?1:-1);touchStart=null},{passive:true});
 $('csv').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;$('loadStatus').textContent='CSVを読み込んでいます…';try{const buffer=await f.arrayBuffer();let decoded;try{decoded=new TextDecoder('utf-8',{fatal:true}).decode(buffer)}catch(err){decoded=new TextDecoder('shift_jis').decode(buffer)}const parsed=rosterFromCSV(decoded);await loadList(parsed.out,'読込完了：'+parsed.out.length.toLocaleString()+'件'+(parsed.bad?'（不正・欠損行 '+parsed.bad+'件を除外）':'')+'。元CSVは別途削除してください。')}catch(err){$('loadStatus').textContent='取込失敗：'+err.message}finally{e.target.value=''}});
-const sample='表記ナンバー,氏名漢字,氏名カナ,種目名2,生年月日,申込方法,サイズ名,スタートブロック,予想タイム,都市名,年齢\n1234,山田 太郎,ヤマダ タロウ,特設20km男子29歳以下,1999/02/21,RUNNET,M,A,01:30:00,秦野市,27\n2345,山田 太朗,ヤマダ タロウ,10km男子,1978/11/20,RUNNET,L,B,00:50:00,平塚市,48\n3456,佐藤 花子,サトウ ハナコ,10km女子,1992/07/22,事務局,S,C,00:55:00,小田原市,34';
+const sample='表記ナンバー,氏名漢字,氏名カナ,種目名2,生年月日,申込方法,サイズ名,スタートブロック,予想タイム,都市名,年齢,所属\n1234,山田 太郎,ヤマダ タロウ,特設20km男子29歳以下,1999/02/21,RUNNET,M,A,01:30:00,秦野市,27,丹沢ランニングクラブ\n2345,山田 太朗,ヤマダ タロウ,10km男子,1978/11/20,RUNNET,L,B,00:50:00,平塚市,48,湘南RC\n3456,佐藤 花子,サトウ ハナコ,10km女子,1992/07/22,事務局,S,C,00:55:00,小田原市,34,小田原走友会';
 $('sample').onclick=async()=>{if(people.length&&!confirm('登録済み名簿を架空のサンプル名簿に置き換えますか？'))return;try{const r=rosterFromCSV(sample);await loadList(r.out,'架空のサンプル名簿：'+r.out.length+'件を登録しました。')}catch(e){$('loadStatus').textContent=e.message}};
 // The first press opens a confirmation dialogue; no data is removed until explicit confirmation.
 let deletingRoster=false;
